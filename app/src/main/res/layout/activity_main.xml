@@ -79,15 +79,15 @@
         android:layout_marginBottom="76dp"
         android:ems="10"
         android:hint="Monto"
-        android:inputType="text"
+        android:inputType="number"
         android:textSize="18sp"
-        app:layout_constraintBottom_toTopOf="@+id/button"
+        app:layout_constraintBottom_toTopOf="@+id/btnEnviar"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         tools:textColorHint="#1B1A1A" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/btnEnviar"
         android:layout_width="164dp"
         android:layout_height="54dp"
         android:layout_marginBottom="184dp"
