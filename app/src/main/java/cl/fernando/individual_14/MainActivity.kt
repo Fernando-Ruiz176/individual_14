@@ -29,15 +29,31 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun retirarSaldo() {
-        saldo -= binding.editTextMonto.text.toString().toInt()
-        Toast.makeText(applicationContext,"Su retiro ha sido procesado correctamente", Toast.LENGTH_LONG).show()
+        val monto = binding.editTextMonto.text.toString().toInt()
+        if(monto <= saldo){
+            saldo -= monto
+            limpiarMonto()
+            crearMensaje("Su retiro ha sido procesado correctamente")
+        } else {
+            crearMensaje("Su saldo es menor que la cantidad que quiere retirar, intente con una cifra menor")
+
+        }
+
     }
 
     private fun ingresarSaldo() {
         saldo += binding.editTextMonto.text.toString().toInt()
-        Toast.makeText(applicationContext,"Su saldo ha sido actualizado correctamente", Toast.LENGTH_LONG).show()
+        limpiarMonto()
+        crearMensaje("Su saldo ha sido actualizado correctamente")
 
 
-        // minuto 2:26
+    }
+
+    fun limpiarMonto(){
+        binding.editTextMonto.text.clear()
+    }
+
+    fun crearMensaje(s: String) {
+        Toast.makeText(applicationContext, s, Toast.LENGTH_LONG).show()
     }
 }
