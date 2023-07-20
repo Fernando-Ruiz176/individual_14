@@ -21,15 +21,23 @@ class MainActivity : AppCompatActivity() {
                 R.id.btnVerSaldo ->
                     binding.editTextMonto.setText(saldo.toString())
                 R.id.btnIngresar -> ingresarSaldo()
-
+                R.id.btnRetirar -> retirarSaldo()
+                R.id.btnSalit -> finish()
             }
         }
 
+    }
+
+    private fun retirarSaldo() {
+        saldo -= binding.editTextMonto.text.toString().toInt()
+        Toast.makeText(applicationContext,"Su retiro ha sido procesado correctamente", Toast.LENGTH_LONG).show()
     }
 
     private fun ingresarSaldo() {
         saldo += binding.editTextMonto.text.toString().toInt()
         Toast.makeText(applicationContext,"Su saldo ha sido actualizado correctamente", Toast.LENGTH_LONG).show()
 
+
+        // minuto 2:26
     }
 }
